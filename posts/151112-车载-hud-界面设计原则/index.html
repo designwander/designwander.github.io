@@ -1,0 +1,459 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>车载 HUD 界面设计原则 - DesignWander</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="近期参与了一个车载 HUD (Head Up Display) 项目，虽然 HUD 是一个很早就出现的概念，不过在界面设计上，可参考的实际产品并不多，除了 Navdy，Hudway 等国外产品以及国内最近出现的几个 HUD 产品外，当前能找到的更多的是概念性的设计，对实际需要量产的产品来说，参考的意义并不很大，于是自己在设计前期做了一些尝试，期间总结了一些 HUD 界面设计的经验与原则，不一定都是对的，仅作分享。
+1.首要原则-不影响行车安全 HUD 的初衷即是为了解决频繁低头可能导致的安全问题，所以如果一个 HUD 不仅没有改善安全，反而引起更多的问题，那这个 HUD 就没有存在的意义了。
+2.精简显示，只显示当前需要的内容 3.交互方式以少占用思考资源为优 行车过程中，复杂的路面，车辆，行人等因素对司机注意力，判断力等要求比较高，在这样的前提下，HUD 的交互相对于平时使用的软件，无疑需要更高的直觉性，更低的界面认知负载（Cognitive load）。
+4.幅度更小的界面动效 丰富的动效，酷炫的转场效果毫无疑问会干扰司机的注意力，这即使放在手机上都不合适，在 HUD 上就要更谨慎了。其实对于大多数信息，HUD 更多的是充当一个被动的信息显示角色，而不是一个主动管理、告知的角色，在信息显示出来后，用户是否去获取了，是否去处理了，则不是 HUD 需要管的事。
+5.尽量固定的静态的布局 有利于行车中更快的定位、获取信息
+6.细线体与大字号 采用高识别性的字体。由于界面是通过挡风玻璃反射高亮度的屏幕呈现的，产生的光晕会让笔画整体变粗，甚至糊在一起，这在夜晚、隧道等暗环境下尤其明显，所以建议选择笔画较纤细，中宫放松的字型。另外，粗体字集中出现时也容易阻挡视线。
+7.线条代替色块 减少对视线的阻挡
+8.尽量少用透明度与暗色调 通过高强度的背光点亮屏幕，或者通过把显示的元素投影到一个幕布上，使得挡风玻璃对屏幕（幕布）产生反射，于是用户就能从挡风玻璃上获取到屏幕显示的信息，鉴于这样的原理，那么暗色调就意味该元素在屏幕上不发光或者发光非常微弱，在挡风玻璃上就无法产生可以识别的反射了，尤其是白天。采用了透明度的元素同理。
+9.页面层级不超过2级 注意力相对不集中，在进行一个任务（例如打个电话）的过程中，有可能是通过行车时的几个分散的时间间隙去完成的，这个时候层级深了就容易丢失上下文。
+10.配色尽量与交通标识颜色不重合 11.动态的界面亮度 夜晚明晃晃的界面容易影响视线，瞳孔收缩导致进光量减少，暗处的只能看到漆黑一片了。
+12.导航常驻（特指行车导航，非界面的导航菜单） 13.更简洁的文案 14.考虑特殊天气、新手、近视、疲劳驾驶、甚至酒驾等极端状态 " />
+  <meta name="author" content="DesignWander" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://designwander.github.io/main.min.css" />
+
+  
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://designwander.github.io/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://designwander.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+  
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://designwander.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://designwander.github.io/apple-touch-icon.png" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  
+  
+
+  
+  <meta name="generator" content="Hugo 0.128.2">
+
+  
+  
+  
+  
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y08STD9ZJK"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-Y08STD9ZJK');
+        }
+      </script>
+    
+  
+
+
+  
+  
+  <meta itemprop="name" content="车载 HUD 界面设计原则">
+  <meta itemprop="description" content="近期参与了一个车载 HUD (Head Up Display) 项目，虽然 HUD 是一个很早就出现的概念，不过在界面设计上，可参考的实际产品并不多，除了 Navdy，Hudway 等国外产品以及国内最近出现的几个 HUD 产品外，当前能找到的更多的是概念性的设计，对实际需要量产的产品来说，参考的意义并不很大，于是自己在设计前期做了一些尝试，期间总结了一些 HUD 界面设计的经验与原则，不一定都是对的，仅作分享。
+1.首要原则-不影响行车安全 HUD 的初衷即是为了解决频繁低头可能导致的安全问题，所以如果一个 HUD 不仅没有改善安全，反而引起更多的问题，那这个 HUD 就没有存在的意义了。
+2.精简显示，只显示当前需要的内容 3.交互方式以少占用思考资源为优 行车过程中，复杂的路面，车辆，行人等因素对司机注意力，判断力等要求比较高，在这样的前提下，HUD 的交互相对于平时使用的软件，无疑需要更高的直觉性，更低的界面认知负载（Cognitive load）。
+4.幅度更小的界面动效 丰富的动效，酷炫的转场效果毫无疑问会干扰司机的注意力，这即使放在手机上都不合适，在 HUD 上就要更谨慎了。其实对于大多数信息，HUD 更多的是充当一个被动的信息显示角色，而不是一个主动管理、告知的角色，在信息显示出来后，用户是否去获取了，是否去处理了，则不是 HUD 需要管的事。
+5.尽量固定的静态的布局 有利于行车中更快的定位、获取信息
+6.细线体与大字号 采用高识别性的字体。由于界面是通过挡风玻璃反射高亮度的屏幕呈现的，产生的光晕会让笔画整体变粗，甚至糊在一起，这在夜晚、隧道等暗环境下尤其明显，所以建议选择笔画较纤细，中宫放松的字型。另外，粗体字集中出现时也容易阻挡视线。
+7.线条代替色块 减少对视线的阻挡
+8.尽量少用透明度与暗色调 通过高强度的背光点亮屏幕，或者通过把显示的元素投影到一个幕布上，使得挡风玻璃对屏幕（幕布）产生反射，于是用户就能从挡风玻璃上获取到屏幕显示的信息，鉴于这样的原理，那么暗色调就意味该元素在屏幕上不发光或者发光非常微弱，在挡风玻璃上就无法产生可以识别的反射了，尤其是白天。采用了透明度的元素同理。
+9.页面层级不超过2级 注意力相对不集中，在进行一个任务（例如打个电话）的过程中，有可能是通过行车时的几个分散的时间间隙去完成的，这个时候层级深了就容易丢失上下文。
+10.配色尽量与交通标识颜色不重合 11.动态的界面亮度 夜晚明晃晃的界面容易影响视线，瞳孔收缩导致进光量减少，暗处的只能看到漆黑一片了。
+12.导航常驻（特指行车导航，非界面的导航菜单） 13.更简洁的文案 14.考虑特殊天气、新手、近视、疲劳驾驶、甚至酒驾等极端状态 ">
+  <meta itemprop="datePublished" content="2015-11-12T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2015-11-12T00:00:00+00:00">
+  <meta itemprop="wordCount" content="49">
+  
+  <meta property="og:url" content="https://designwander.github.io/posts/151112-%E8%BD%A6%E8%BD%BD-hud-%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/">
+  <meta property="og:site_name" content="DesignWander">
+  <meta property="og:title" content="车载 HUD 界面设计原则">
+  <meta property="og:description" content="近期参与了一个车载 HUD (Head Up Display) 项目，虽然 HUD 是一个很早就出现的概念，不过在界面设计上，可参考的实际产品并不多，除了 Navdy，Hudway 等国外产品以及国内最近出现的几个 HUD 产品外，当前能找到的更多的是概念性的设计，对实际需要量产的产品来说，参考的意义并不很大，于是自己在设计前期做了一些尝试，期间总结了一些 HUD 界面设计的经验与原则，不一定都是对的，仅作分享。
+1.首要原则-不影响行车安全 HUD 的初衷即是为了解决频繁低头可能导致的安全问题，所以如果一个 HUD 不仅没有改善安全，反而引起更多的问题，那这个 HUD 就没有存在的意义了。
+2.精简显示，只显示当前需要的内容 3.交互方式以少占用思考资源为优 行车过程中，复杂的路面，车辆，行人等因素对司机注意力，判断力等要求比较高，在这样的前提下，HUD 的交互相对于平时使用的软件，无疑需要更高的直觉性，更低的界面认知负载（Cognitive load）。
+4.幅度更小的界面动效 丰富的动效，酷炫的转场效果毫无疑问会干扰司机的注意力，这即使放在手机上都不合适，在 HUD 上就要更谨慎了。其实对于大多数信息，HUD 更多的是充当一个被动的信息显示角色，而不是一个主动管理、告知的角色，在信息显示出来后，用户是否去获取了，是否去处理了，则不是 HUD 需要管的事。
+5.尽量固定的静态的布局 有利于行车中更快的定位、获取信息
+6.细线体与大字号 采用高识别性的字体。由于界面是通过挡风玻璃反射高亮度的屏幕呈现的，产生的光晕会让笔画整体变粗，甚至糊在一起，这在夜晚、隧道等暗环境下尤其明显，所以建议选择笔画较纤细，中宫放松的字型。另外，粗体字集中出现时也容易阻挡视线。
+7.线条代替色块 减少对视线的阻挡
+8.尽量少用透明度与暗色调 通过高强度的背光点亮屏幕，或者通过把显示的元素投影到一个幕布上，使得挡风玻璃对屏幕（幕布）产生反射，于是用户就能从挡风玻璃上获取到屏幕显示的信息，鉴于这样的原理，那么暗色调就意味该元素在屏幕上不发光或者发光非常微弱，在挡风玻璃上就无法产生可以识别的反射了，尤其是白天。采用了透明度的元素同理。
+9.页面层级不超过2级 注意力相对不集中，在进行一个任务（例如打个电话）的过程中，有可能是通过行车时的几个分散的时间间隙去完成的，这个时候层级深了就容易丢失上下文。
+10.配色尽量与交通标识颜色不重合 11.动态的界面亮度 夜晚明晃晃的界面容易影响视线，瞳孔收缩导致进光量减少，暗处的只能看到漆黑一片了。
+12.导航常驻（特指行车导航，非界面的导航菜单） 13.更简洁的文案 14.考虑特殊天气、新手、近视、疲劳驾驶、甚至酒驾等极端状态 ">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2015-11-12T00:00:00+00:00">
+    <meta property="article:modified_time" content="2015-11-12T00:00:00+00:00">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="车载 HUD 界面设计原则">
+  <meta name="twitter:description" content="近期参与了一个车载 HUD (Head Up Display) 项目，虽然 HUD 是一个很早就出现的概念，不过在界面设计上，可参考的实际产品并不多，除了 Navdy，Hudway 等国外产品以及国内最近出现的几个 HUD 产品外，当前能找到的更多的是概念性的设计，对实际需要量产的产品来说，参考的意义并不很大，于是自己在设计前期做了一些尝试，期间总结了一些 HUD 界面设计的经验与原则，不一定都是对的，仅作分享。
+1.首要原则-不影响行车安全 HUD 的初衷即是为了解决频繁低头可能导致的安全问题，所以如果一个 HUD 不仅没有改善安全，反而引起更多的问题，那这个 HUD 就没有存在的意义了。
+2.精简显示，只显示当前需要的内容 3.交互方式以少占用思考资源为优 行车过程中，复杂的路面，车辆，行人等因素对司机注意力，判断力等要求比较高，在这样的前提下，HUD 的交互相对于平时使用的软件，无疑需要更高的直觉性，更低的界面认知负载（Cognitive load）。
+4.幅度更小的界面动效 丰富的动效，酷炫的转场效果毫无疑问会干扰司机的注意力，这即使放在手机上都不合适，在 HUD 上就要更谨慎了。其实对于大多数信息，HUD 更多的是充当一个被动的信息显示角色，而不是一个主动管理、告知的角色，在信息显示出来后，用户是否去获取了，是否去处理了，则不是 HUD 需要管的事。
+5.尽量固定的静态的布局 有利于行车中更快的定位、获取信息
+6.细线体与大字号 采用高识别性的字体。由于界面是通过挡风玻璃反射高亮度的屏幕呈现的，产生的光晕会让笔画整体变粗，甚至糊在一起，这在夜晚、隧道等暗环境下尤其明显，所以建议选择笔画较纤细，中宫放松的字型。另外，粗体字集中出现时也容易阻挡视线。
+7.线条代替色块 减少对视线的阻挡
+8.尽量少用透明度与暗色调 通过高强度的背光点亮屏幕，或者通过把显示的元素投影到一个幕布上，使得挡风玻璃对屏幕（幕布）产生反射，于是用户就能从挡风玻璃上获取到屏幕显示的信息，鉴于这样的原理，那么暗色调就意味该元素在屏幕上不发光或者发光非常微弱，在挡风玻璃上就无法产生可以识别的反射了，尤其是白天。采用了透明度的元素同理。
+9.页面层级不超过2级 注意力相对不集中，在进行一个任务（例如打个电话）的过程中，有可能是通过行车时的几个分散的时间间隙去完成的，这个时候层级深了就容易丢失上下文。
+10.配色尽量与交通标识颜色不重合 11.动态的界面亮度 夜晚明晃晃的界面容易影响视线，瞳孔收缩导致进光量减少，暗处的只能看到漆黑一片了。
+12.导航常驻（特指行车导航，非界面的导航菜单） 13.更简洁的文案 14.考虑特殊天气、新手、近视、疲劳驾驶、甚至酒驾等极端状态 ">
+
+  
+  
+  
+  <link rel="canonical" href="https://designwander.github.io/posts/151112-%E8%BD%A6%E8%BD%BD-hud-%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" />
+  
+  
+
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="flex h-[4.5rem] px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="sitetitle -translate-x-[1px] -translate-y-[1px] font-semibold"
+      href="https://designwander.github.io/"
+      >
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M7.49999 4.04894C7.49999 2.81725 8.83333 2.04745 9.89999 2.66329L30.6 14.6144C31.6667 15.2303 31.6667 16.7699 30.6 17.3857L9.89999 29.3369C8.83333 29.9527 7.49999 29.1829 7.5 27.9512L7.49999 4.04894ZM9.49999 4.74176L9.5 27.2584L29 16.0001L9.49999 4.74176Z" fill="currentColor" fill-opacity="0.5"></path>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.4238 2.00958C8.49491 2.00958 7.63658 2.50514 7.17213 3.30958L0.595893 14.7C0.131447 15.5044 0.131448 16.4955 0.595892 17.3L7.17213 28.6903C7.63658 29.4948 8.49491 29.9903 9.4238 29.9903H22.5763C23.5052 29.9903 24.3635 29.4948 24.8279 28.6903L31.4042 17.3C31.8686 16.4955 31.8686 15.5044 31.4042 14.7L24.8279 3.30958C24.3635 2.50514 23.5052 2.00958 22.5763 2.00958H9.4238ZM8.90418 4.30958C9.01136 4.12394 9.20944 4.00958 9.4238 4.00958H21.768L15.4227 15H2.73206L8.90418 4.30958ZM2.73212 17L8.90418 27.6903C9.01136 27.876 9.20944 27.9903 9.4238 27.9903H21.7679L15.4227 17L2.73212 17ZM23.5 26.9904L29.6721 16.3C29.7793 16.1143 29.7793 15.8856 29.6721 15.7L23.5 5.00958L17.1547 16L23.5 26.9904Z" fill="currentColor"></path>
+      </svg>
+      DesignWander
+    </a>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const applySystemTheme = () => {
+      setDark(darkScheme.matches);
+    };
+
+    
+    darkScheme.addEventListener('change', applySystemTheme);
+
+    
+    applySystemTheme();
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6 opacity-60">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/"
+        >Posts</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="https://www.pinterest.com/leiwaais/"
+        >Inspiration</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="https:www.dribbble.com/leiwaa/"
+        >Sparks</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+    </nav>
+    
+
+  
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-left min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">车载 HUD 界面设计原则</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Nov 12, 2015</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><p>近期参与了一个车载 HUD (Head Up Display) 项目，虽然 HUD 是一个很早就出现的概念，不过在界面设计上，可参考的实际产品并不多，除了 Navdy，Hudway 等国外产品以及国内最近出现的几个 HUD 产品外，当前能找到的更多的是概念性的设计，对实际需要量产的产品来说，参考的意义并不很大，于是自己在设计前期做了一些尝试，期间总结了一些 HUD 界面设计的经验与原则，不一定都是对的，仅作分享。</p>
+<h4 id="1首要原则-不影响行车安全">1.首要原则-不影响行车安全</h4>
+<p>HUD 的初衷即是为了解决频繁低头可能导致的安全问题，所以如果一个 HUD 不仅没有改善安全，反而引起更多的问题，那这个 HUD 就没有存在的意义了。</p>
+<h4 id="2精简显示只显示当前需要的内容">2.精简显示，只显示当前需要的内容</h4>
+<h4 id="3交互方式以少占用思考资源为优">3.交互方式以少占用思考资源为优</h4>
+<p>行车过程中，复杂的路面，车辆，行人等因素对司机注意力，判断力等要求比较高，在这样的前提下，HUD 的交互相对于平时使用的软件，无疑需要更高的直觉性，更低的界面认知负载（Cognitive load）。</p>
+<h4 id="4幅度更小的界面动效">4.幅度更小的界面动效</h4>
+<p>丰富的动效，酷炫的转场效果毫无疑问会干扰司机的注意力，这即使放在手机上都不合适，在 HUD 上就要更谨慎了。其实对于大多数信息，HUD 更多的是充当一个被动的信息显示角色，而不是一个主动管理、告知的角色，在信息显示出来后，用户是否去获取了，是否去处理了，则不是 HUD 需要管的事。</p>
+<h4 id="5尽量固定的静态的布局">5.尽量固定的静态的布局</h4>
+<p>有利于行车中更快的定位、获取信息</p>
+<h4 id="6细线体与大字号">6.细线体与大字号</h4>
+<p>采用高识别性的字体。由于界面是通过挡风玻璃反射高亮度的屏幕呈现的，产生的光晕会让笔画整体变粗，甚至糊在一起，这在夜晚、隧道等暗环境下尤其明显，所以建议选择笔画较纤细，中宫放松的字型。另外，粗体字集中出现时也容易阻挡视线。</p>
+<h4 id="7线条代替色块">7.线条代替色块</h4>
+<p>减少对视线的阻挡</p>
+<h4 id="8尽量少用透明度与暗色调">8.尽量少用透明度与暗色调</h4>
+<p>通过高强度的背光点亮屏幕，或者通过把显示的元素投影到一个幕布上，使得挡风玻璃对屏幕（幕布）产生反射，于是用户就能从挡风玻璃上获取到屏幕显示的信息，鉴于这样的原理，那么暗色调就意味该元素在屏幕上不发光或者发光非常微弱，在挡风玻璃上就无法产生可以识别的反射了，尤其是白天。采用了透明度的元素同理。</p>
+<h4 id="9页面层级不超过2级">9.页面层级不超过2级</h4>
+<p>注意力相对不集中，在进行一个任务（例如打个电话）的过程中，有可能是通过行车时的几个分散的时间间隙去完成的，这个时候层级深了就容易丢失上下文。</p>
+<h4 id="10配色尽量与交通标识颜色不重合">10.配色尽量与交通标识颜色不重合</h4>
+<h4 id="11动态的界面亮度">11.动态的界面亮度</h4>
+<p>夜晚明晃晃的界面容易影响视线，瞳孔收缩导致进光量减少，暗处的只能看到漆黑一片了。</p>
+<h4 id="12导航常驻特指行车导航非界面的导航菜单">12.导航常驻（特指行车导航，非界面的导航菜单）</h4>
+<h4 id="13更简洁的文案">13.更简洁的文案</h4>
+<h4 id="14考虑特殊天气新手近视疲劳驾驶甚至酒驾等极端状态">14.考虑特殊天气、新手、近视、疲劳驾驶、甚至酒驾等极端状态</h4>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://designwander.github.io/posts/151216-%E5%86%85%E5%AE%B9%E5%BD%92%E7%B1%BB%E9%80%BB%E8%BE%91-vs-%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%E9%80%BB%E8%BE%91/"
+      ><span class="mr-1.5">←</span><span>内容归类逻辑 VS 用户操作逻辑</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://designwander.github.io/posts/151004-%E4%BC%A0%E7%BB%9F%E4%B9%A6%E6%B3%95%E4%B8%AD%E7%9A%84%E6%AC%B2%E6%89%AC%E5%85%88%E6%8A%91/"
+      ><span>传统书法中的欲扬先抑</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco flex h-[4.5rem] items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="https://designwander.github.io/">DESIGNWANDER · 关于用户界面和工业设计</a>
+  </div>
+  <a class="link mx-6" href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" rel="noopener" target="_blank"
+    >CC BY-NC-ND</a
+  >️
+</footer>
+
+  </body>
+</html>
