@@ -1,0 +1,395 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>所见即所得—Figma和Sketch中的设计细节 - DesignWander</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="设计软件从 Sketch 切换到 Figma 已经有好一段时间了，之前一直没留意，今天在使用 Figma 时注意到几个很有意思的细节，可能也涉及到 Figma 与 Sketch 设计理念的差异。
+很多设计软件都有给线条端点添加箭头的功能。先画一根线，然后点击某个按钮为它加上一个箭头。线有两端，所以设计软件上会提供两个设置项，对应线段的两端，用户可以分别为两端指定是否需要添加箭头。这时候问题来了，如何体现线条的两端和两个设置项之间的对应关系呢？通常做法是通过「起始点」和「结束点」来对应。因为线条确实也有「起始点」和「结束点」的概念。先画的一端为起始点，结束的一端为结束点，很自然很合理。所以你会看到两个箭头设置项分别命名为 Start Point 和 End Point。就像 Sketch 里面一样：
+一条自右向左绘制的线条(Sketch)
+这是众多设计软件一直以来的工作方式。我也按照这样的方式用了很多年，直到今天发现 Figma 上的一个不一样的小设计。
+一条自右向左绘制的线条(Figma)
+Figma 的方案看起来非常简单。直接按照一左一右排列提供了两个设置项，分别 Map 线条的左右两端，想设置线条左端箭头就使用左侧的设置项，想设置线条右端箭头就使用右侧的设置项，所见即所得。这种方式与使用多年的「起始点」和「结束点」的区别在于，「起始点」和「结束点」虽然很直接，但是依据的是抽象的逻辑顺序做对应，用户需要依赖划线的过程作为上下文信息来辅助进行决策，但是这个上下文信息通常很容易丢失，毕竟谁还记得昨天画的一条线哪个是头哪个是尾。因此经常出现需要进行一次试错才能得到正确的结果的情况。而直接通过位置映射的方式则是纯视觉的，不需要抽象的逻辑，直接但更直观。当然 Figma 的这个方案还有一个小 bug，就是当一根线是垂直的时候，就没办法区分左右了。遇到这种情况有一种常见的做法，就是强行定一个对应规则，让用户来适应。好在当设计者在定义规则的时候，假如能和用户的习惯或者一些潜意识相吻合，问题也不大，用起来还是比较顺手的。比如根据从上到下，从左往右的顺序，我们能够比较自然的将「线条的上端」与「设置项的左端」联系起来。这样的潜意识关联还有很多，敏感的设计师能发现。这跟我们以前学语文时老师提到的「通感」是很类似的。
+总的来说，以 Sketch 为例的区分「起始点」和「结束点」的方案是一个符合逻辑的设计，或者说是面向实现的设计，而 Figma 的是一个更符合直觉的设计，面线用户的设计。有点像 RGB 与 HSB 的区别。
+类似的还有布尔运算的例子。
+Sketch中的布尔运算
+在 Sketch (或者其他设计软件)中，我们画一个圆形，然后去掉填充色，再加个描边，得到一个描边圆形，从逻辑来看它仍然是一个圆形。因此当用它做布尔运算时，圆形下方的东西会被裁切掉，这合情合理，没毛病，设计软件都是这么处理的。
+但在 Figma 中，按照这样的方式操作，会得到一个很奇怪的结果。
+Figma中的布尔运算
+细看会发现，Figma 是将一个描边圆形视为一个圆环来进行布尔运算了，与线条(圆环)重叠的地方被裁切了。不清楚这里面是否有技术实现上的考量，但转念一想，这个一反设计软件常态的工作方式似乎又很合理。作为一款视觉设计软件，那遵循视觉优先、以视觉为准的理念，似乎也没有什么毛病。如果一种东西走路像鸭子，游泳像鸭子，叫声像鸭子，那它一定就是一只鸭子。所见即所得，一个东西看起来像什么它就可以是什么。先不说这样的做法对一个设计软件来说是否合适，单从交互的角度来讲，它确实更符合直觉。
+以上是在 Figma 中给线条设置箭头和使用描边图形做布尔运算的例子，发现这两个细节时还是让我有点小感慨的，一些看着很正常的「惯例做法」常常让人理所当然，忘记了重新出发，习惯会屏蔽人的思考。
+不过 Figma 中也不全是这种视觉优先的东西，不知道为何。比如在对矩形的圆角进行设置这块，就和 Sketch 反过来了。
+Figma中的矩形倒角设置
+Sketch中的矩形倒角设置项
+显然 Sketch 中这种基于空间映射的方式更自然更直觉，而 Figma 反而以顺时针排序这么一个不是那么易懂的方式来处理，也许是要和 CSS 中的逻辑对齐，但对于很多设计师用户来说，确实很不直观。尤其是当要单独设置某一两个圆角的时候，还得耗费好一些认知资源，以及犯一两次无法避免的错。" />
+  <meta name="author" content="DesignWander" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+  
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  
+  
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y08STD9ZJK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y08STD9ZJK');
+</script>
+  
+
+  
+  <meta name="generator" content="Hugo 0.128.2">
+
+  
+  
+  
+
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="flex h-[4.5rem] px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="sitetitle -translate-x-[1px] -translate-y-[1px] font-semibold"
+      href="http://localhost:1313/"
+      >
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M7.49999 4.04894C7.49999 2.81725 8.83333 2.04745 9.89999 2.66329L30.6 14.6144C31.6667 15.2303 31.6667 16.7699 30.6 17.3857L9.89999 29.3369C8.83333 29.9527 7.49999 29.1829 7.5 27.9512L7.49999 4.04894ZM9.49999 4.74176L9.5 27.2584L29 16.0001L9.49999 4.74176Z" fill="currentColor" fill-opacity="0.5"></path>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.4238 2.00958C8.49491 2.00958 7.63658 2.50514 7.17213 3.30958L0.595893 14.7C0.131447 15.5044 0.131448 16.4955 0.595892 17.3L7.17213 28.6903C7.63658 29.4948 8.49491 29.9903 9.4238 29.9903H22.5763C23.5052 29.9903 24.3635 29.4948 24.8279 28.6903L31.4042 17.3C31.8686 16.4955 31.8686 15.5044 31.4042 14.7L24.8279 3.30958C24.3635 2.50514 23.5052 2.00958 22.5763 2.00958H9.4238ZM8.90418 4.30958C9.01136 4.12394 9.20944 4.00958 9.4238 4.00958H21.768L15.4227 15H2.73206L8.90418 4.30958ZM2.73212 17L8.90418 27.6903C9.01136 27.876 9.20944 27.9903 9.4238 27.9903H21.7679L15.4227 17L2.73212 17ZM23.5 26.9904L29.6721 16.3C29.7793 16.1143 29.7793 15.8856 29.6721 15.7L23.5 5.00958L17.1547 16L23.5 26.9904Z" fill="currentColor"></path>
+      </svg>
+      DesignWander
+    </a>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const applySystemTheme = () => {
+      setDark(darkScheme.matches);
+    };
+
+    
+    darkScheme.addEventListener('change', applySystemTheme);
+
+    
+    applySystemTheme();
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6 opacity-60">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/"
+        >Posts</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="https://www.pinterest.com/leiwaais/"
+        >Inspiration</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="https:www.dribbble.com/leiwaa/"
+        >Sparks</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+    </nav>
+    
+
+  
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-left min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">所见即所得—Figma和Sketch中的设计细节</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Mar 23, 2023</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><p>设计软件从 Sketch 切换到 Figma 已经有好一段时间了，之前一直没留意，今天在使用 Figma 时注意到几个很有意思的细节，可能也涉及到 Figma 与 Sketch 设计理念的差异。</p>
+<p>很多设计软件都有给线条端点添加箭头的功能。先画一根线，然后点击某个按钮为它加上一个箭头。线有两端，所以设计软件上会提供两个设置项，对应线段的两端，用户可以分别为两端指定是否需要添加箭头。这时候问题来了，如何体现线条的两端和两个设置项之间的对应关系呢？通常做法是通过「起始点」和「结束点」来对应。因为线条确实也有「起始点」和「结束点」的概念。先画的一端为起始点，结束的一端为结束点，很自然很合理。所以你会看到两个箭头设置项分别命名为 Start Point 和 End Point。就像 Sketch 里面一样：</p>
+<p><img src="/images/230323-%E6%89%80%E8%A7%81%E5%8D%B3%E6%89%80%E5%BE%97%E2%80%94Figma%E5%92%8CSketch%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%BB%86%E8%8A%82/%E4%B8%80%E6%9D%A1%E8%87%AA%E5%8F%B3%E5%90%91%E5%B7%A6%E7%BB%98%E5%88%B6%E7%9A%84%E7%BA%BF%E6%9D%A1(Sketch).png" alt="">
+<em>一条自右向左绘制的线条(Sketch)</em></p>
+<p>这是众多设计软件一直以来的工作方式。我也按照这样的方式用了很多年，直到今天发现 Figma 上的一个不一样的小设计。</p>
+<p><img src="/images/230323-%E6%89%80%E8%A7%81%E5%8D%B3%E6%89%80%E5%BE%97%E2%80%94Figma%E5%92%8CSketch%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%BB%86%E8%8A%82/%E4%B8%80%E6%9D%A1%E8%87%AA%E5%8F%B3%E5%90%91%E5%B7%A6%E7%BB%98%E5%88%B6%E7%9A%84%E7%BA%BF%E6%9D%A1(Figma).png" alt="">
+<em>一条自右向左绘制的线条(Figma)</em></p>
+<p>Figma 的方案看起来非常简单。直接按照一左一右排列提供了两个设置项，分别 Map 线条的左右两端，想设置线条左端箭头就使用左侧的设置项，想设置线条右端箭头就使用右侧的设置项，所见即所得。这种方式与使用多年的「起始点」和「结束点」的区别在于，「起始点」和「结束点」虽然很直接，但是依据的是抽象的逻辑顺序做对应，用户需要依赖划线的过程作为上下文信息来辅助进行决策，但是这个上下文信息通常很容易丢失，毕竟谁还记得昨天画的一条线哪个是头哪个是尾。因此经常出现需要进行一次试错才能得到正确的结果的情况。而直接通过位置映射的方式则是纯视觉的，不需要抽象的逻辑，直接但更直观。当然 Figma 的这个方案还有一个小 bug，就是当一根线是垂直的时候，就没办法区分左右了。遇到这种情况有一种常见的做法，就是强行定一个对应规则，让用户来适应。好在当设计者在定义规则的时候，假如能和用户的习惯或者一些潜意识相吻合，问题也不大，用起来还是比较顺手的。比如根据从上到下，从左往右的顺序，我们能够比较自然的将「线条的上端」与「设置项的左端」联系起来。这样的潜意识关联还有很多，敏感的设计师能发现。这跟我们以前学语文时老师提到的「通感」是很类似的。</p>
+<p>总的来说，以 Sketch 为例的区分「起始点」和「结束点」的方案是一个符合逻辑的设计，或者说是面向实现的设计，而 Figma 的是一个更符合直觉的设计，面线用户的设计。有点像 RGB 与 HSB 的区别。</p>
+<p>类似的还有布尔运算的例子。</p>
+<p><img src="/images/230323-%E6%89%80%E8%A7%81%E5%8D%B3%E6%89%80%E5%BE%97%E2%80%94Figma%E5%92%8CSketch%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%BB%86%E8%8A%82/Sketch%E4%B8%AD%E7%9A%84%E5%B8%83%E5%B0%94%E8%BF%90%E7%AE%97.png" alt="">
+<em>Sketch中的布尔运算</em></p>
+<p>在 Sketch (或者其他设计软件)中，我们画一个圆形，然后去掉填充色，再加个描边，得到一个描边圆形，从逻辑来看它仍然是一个圆形。因此当用它做布尔运算时，圆形下方的东西会被裁切掉，这合情合理，没毛病，设计软件都是这么处理的。</p>
+<p>但在 Figma 中，按照这样的方式操作，会得到一个很奇怪的结果。</p>
+<p><img src="/images/230323-%E6%89%80%E8%A7%81%E5%8D%B3%E6%89%80%E5%BE%97%E2%80%94Figma%E5%92%8CSketch%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%BB%86%E8%8A%82/Figma%E4%B8%AD%E7%9A%84%E5%B8%83%E5%B0%94%E8%BF%90%E7%AE%97.png" alt="">
+<em>Figma中的布尔运算</em></p>
+<p>细看会发现，Figma 是将一个描边圆形视为一个圆环来进行布尔运算了，与线条(圆环)重叠的地方被裁切了。不清楚这里面是否有技术实现上的考量，但转念一想，这个一反设计软件常态的工作方式似乎又很合理。作为一款视觉设计软件，那遵循视觉优先、以视觉为准的理念，似乎也没有什么毛病。如果一种东西走路像鸭子，游泳像鸭子，叫声像鸭子，那它一定就是一只鸭子。所见即所得，<strong>一个东西看起来像什么它就可以是什么</strong>。先不说这样的做法对一个设计软件来说是否合适，单从交互的角度来讲，它确实更符合直觉。</p>
+<p>以上是在 Figma 中给线条设置箭头和使用描边图形做布尔运算的例子，发现这两个细节时还是让我有点小感慨的，一些看着很正常的「惯例做法」常常让人理所当然，忘记了重新出发，习惯会屏蔽人的思考。</p>
+<p>不过 Figma 中也不全是这种视觉优先的东西，不知道为何。比如在对矩形的圆角进行设置这块，就和 Sketch 反过来了。</p>
+<p><img src="/images/230323-%E6%89%80%E8%A7%81%E5%8D%B3%E6%89%80%E5%BE%97%E2%80%94Figma%E5%92%8CSketch%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%BB%86%E8%8A%82/Figma%E4%B8%AD%E7%9A%84%E7%9F%A9%E5%BD%A2%E5%80%92%E8%A7%92%E8%AE%BE%E7%BD%AE%E9%A1%B9.png" alt="">
+<em>Figma中的矩形倒角设置</em></p>
+<p><img src="/images/230323-%E6%89%80%E8%A7%81%E5%8D%B3%E6%89%80%E5%BE%97%E2%80%94Figma%E5%92%8CSketch%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%BB%86%E8%8A%82/Sketch%E4%B8%AD%E7%9A%84%E7%9F%A9%E5%BD%A2%E5%80%92%E8%A7%92%E8%AE%BE%E7%BD%AE%E9%A1%B9.png" alt="">
+<em>Sketch中的矩形倒角设置项</em></p>
+<p>显然 Sketch 中这种<strong>基于空间映射的方式更自然更直觉</strong>，而 Figma 反而以顺时针排序这么一个不是那么易懂的方式来处理，也许是要和 CSS 中的逻辑对齐，但对于很多设计师用户来说，确实很不直观。尤其是当要单独设置某一两个圆角的时候，还得耗费好一些认知资源，以及犯一两次无法避免的错。</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/posts/230325-%E5%8F%A6%E4%B8%80%E4%B8%AA%E8%A7%92%E5%BA%A6%E7%9C%8B%E4%BB%80%E4%B9%88%E6%98%AF%E5%A5%BD%E7%9A%84%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/"
+      ><span class="mr-1.5">←</span><span>另一个角度看什么是好的产品设计</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/posts/221202-%E5%B1%8F%E5%B9%95%E6%8D%A2%E6%8C%A1%E6%98%AF%E5%90%A6%E5%BA%94%E8%AF%A5%E9%81%B5%E5%BE%AA%E5%89%8Dr%E5%90%8Ed%E8%BF%99%E6%A0%B7%E7%9A%84%E5%B8%83%E5%B1%80/"
+      ><span>屏幕换挡是否应该遵循前R后D这样的布局</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco flex h-[4.5rem] items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">DESIGNWANDER · 关于用户界面和工业设计</a>
+  </div>
+  <a class="link mx-6" href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" rel="noopener" target="_blank"
+    >CC BY-NC-ND</a
+  >️
+</footer>
+
+  </body>
+</html>

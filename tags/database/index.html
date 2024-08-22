@@ -1,0 +1,280 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #ffffff"
+  lang="en"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Database - DesignWander</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  
+  <meta
+    name="description"
+    content="A personal blog"
+  />
+  <meta name="author" content="DesignWander" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/github.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/instagram.svg" />
+  
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.128.2">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="flex h-[4.5rem] px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="sitetitle -translate-x-[1px] -translate-y-[1px] font-semibold"
+      href="http://localhost:1313/"
+      >
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.89999 4.0489C7.89999 3.12514 8.89999 2.54779 9.69999 3.00967L30.4 14.9608C31.2 15.4227 31.2 16.5774 30.4 17.0393L9.69999 28.9904C8.89999 29.4523 7.89999 28.875 7.89999 27.9512L7.89999 4.0489ZM9.09999 4.0489L9.09999 27.9512L29.8 16L9.09999 4.0489Z" fill="currentColor" fill-opacity="0.5"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.42378 2.40955C8.63779 2.40955 7.91151 2.82886 7.51852 3.50955L0.942281 14.8999C0.549289 15.5806 0.549289 16.4192 0.942281 17.0999L7.51852 28.4903C7.91151 29.171 8.63779 29.5903 9.42378 29.5903H22.5763C23.3622 29.5903 24.0885 29.171 24.4815 28.4903L31.0578 17.0999C31.4507 16.4192 31.4507 15.5806 31.0578 14.8999L24.4815 3.50955C24.0885 2.82886 23.3622 2.40955 22.5763 2.40955H9.42378ZM8.55775 4.10955C8.73638 3.80015 9.06651 3.60955 9.42378 3.60955L22.4608 3.60955L15.6536 15.4H2.03922L8.55775 4.10955ZM2.03928 16.6L8.55775 27.8903C8.73638 28.1997 9.06651 28.3903 9.42378 28.3903H22.4607L15.6536 16.6H2.03928ZM23.5 27.7904L30.0185 16.4999C30.1972 16.1905 30.1972 15.8093 30.0185 15.4999L23.5 4.20955L16.6928 16L23.5 27.7904Z" fill="currentColor"/>
+      </svg>
+      DesignWander
+    </a>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#ffffff'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const applySystemTheme = () => {
+      setDark(darkScheme.matches);
+    };
+
+    
+    darkScheme.addEventListener('change', applySystemTheme);
+
+    
+    applySystemTheme();
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6 opacity-60">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/"
+        >Posts</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="https://www.pinterest.com/leiwaais/"
+        >Inspiration</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="https:www.dribbble.com/leiwaa/"
+        >Sparks</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+    </nav>
+    
+
+  
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-left min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+
+
+<h1 class="mb-16">#Database</h1>
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 font-bold ">title about</h2>
+  <time class="text-sm antialiased opacity-60"
+    >Nov 12, 2023</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/about/">title about</a>
+</section>
+
+
+
+
+
+
+    </main>
+
+    <footer
+  class="opaco flex h-[4.5rem] items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">DesignWander</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>

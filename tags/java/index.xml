@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on DesignWander</title>
+    <link>http://localhost:1313/tags/java/</link>
+    <description>Recent content in Java on DesignWander</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 12 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>title about</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Sun, 12 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>There is a website obesity crisis. Bloated websites are full of scripts, ads, and trackers slowing your readers down every time they try to read your well-crafted content.&#xA;Bear is all you need to build a fantastic and optimized site or blog. It works perfectly on any viewing device. All you need to focus on is writing good content.&#xA;There is a website obesity crisis. Bloated websites are full of scripts, ads, and trackers slowing your readers down every time they try to read your well-crafted content.</description>
+    </item>
+  </channel>
+</rss>

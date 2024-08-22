@@ -1,0 +1,372 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>看到个有意思的交互 - DesignWander</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="不知道是个bug还是有意为之，点击右边的箭头，页面会从左到右切到上一页（如果右边的叫下一页的话），也就是说页面的运动方向和箭头的方式是一致的，一反常态。
+初试有点奇怪，点多几次似乎又挺合理，有点儿苹果鼠标 Natural Scrolling 的意思。
+关键在于，当点击一个箭头的时候，我们的下意识会认为我们控制的对象是什么？
+如果控制的是页面本身的运动方向，那页面运动方向与箭头同向的行为就很顺畅。就像点击传统滚动条两侧的箭头按钮，能控制中间的滚动条的运动方向一样。
+如果控制的是一个长页面的滑动进度，那么页面运动方向和箭头反向也很合理。这里面的操作隐喻应该源自录音机这类卷轴卡带的快进和快退，右箭头快进，切换到下一个/更后面的内容，对于页面上的内容而言，通常我们下意识也会觉得，左为始右为末，所以基于这样的隐喻，我们会觉得点击快进从右往左切换到下一页是合理的。但是很显然，这个隐喻需要后天额外习得的基础。
+也有可能，箭头的方向表达了用户的意图，点击右箭头的表示‘我要看右边的内容’，就像按电梯按键表达的是‘我需要上楼’而不是‘让电梯上来’一样，那么页面运动方向和箭头反向也很合理。但我的确第一次用电梯时是认为我控制的时电梯的上下。
+那这里面，哪一个才是真实的潜意识呢？
+再退一步，如果都有可能，那哪一种潜意识是最符合原始的本能？或者说不需要建立在后天的经验上？
+试想一下，假如是一个小baby，哪一种才是他最容易理解的方式？" />
+  <meta name="author" content="DesignWander" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+  
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  
+  
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y08STD9ZJK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y08STD9ZJK');
+</script>
+  
+
+  
+  <meta name="generator" content="Hugo 0.128.2">
+
+  
+  
+  
+
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="flex h-[4.5rem] px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="sitetitle -translate-x-[1px] -translate-y-[1px] font-semibold"
+      href="http://localhost:1313/"
+      >
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M7.49999 4.04894C7.49999 2.81725 8.83333 2.04745 9.89999 2.66329L30.6 14.6144C31.6667 15.2303 31.6667 16.7699 30.6 17.3857L9.89999 29.3369C8.83333 29.9527 7.49999 29.1829 7.5 27.9512L7.49999 4.04894ZM9.49999 4.74176L9.5 27.2584L29 16.0001L9.49999 4.74176Z" fill="currentColor" fill-opacity="0.5"></path>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.4238 2.00958C8.49491 2.00958 7.63658 2.50514 7.17213 3.30958L0.595893 14.7C0.131447 15.5044 0.131448 16.4955 0.595892 17.3L7.17213 28.6903C7.63658 29.4948 8.49491 29.9903 9.4238 29.9903H22.5763C23.5052 29.9903 24.3635 29.4948 24.8279 28.6903L31.4042 17.3C31.8686 16.4955 31.8686 15.5044 31.4042 14.7L24.8279 3.30958C24.3635 2.50514 23.5052 2.00958 22.5763 2.00958H9.4238ZM8.90418 4.30958C9.01136 4.12394 9.20944 4.00958 9.4238 4.00958H21.768L15.4227 15H2.73206L8.90418 4.30958ZM2.73212 17L8.90418 27.6903C9.01136 27.876 9.20944 27.9903 9.4238 27.9903H21.7679L15.4227 17L2.73212 17ZM23.5 26.9904L29.6721 16.3C29.7793 16.1143 29.7793 15.8856 29.6721 15.7L23.5 5.00958L17.1547 16L23.5 26.9904Z" fill="currentColor"></path>
+      </svg>
+      DesignWander
+    </a>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const applySystemTheme = () => {
+      setDark(darkScheme.matches);
+    };
+
+    
+    darkScheme.addEventListener('change', applySystemTheme);
+
+    
+    applySystemTheme();
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6 opacity-60">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/"
+        >Posts</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="https://www.pinterest.com/leiwaais/"
+        >Inspiration</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="https:www.dribbble.com/leiwaa/"
+        >Sparks</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+    </nav>
+    
+
+  
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-left min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">看到个有意思的交互</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Feb 6, 2024</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><p><img src="/images/240206-%E7%9C%8B%E5%88%B0%E4%B8%AA%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E4%BA%A4%E4%BA%92/slideswitch.gif" alt=""></p>
+<p>不知道是个bug还是有意为之，点击右边的箭头，页面会从左到右切到上一页（如果右边的叫下一页的话），也就是说页面的运动方向和箭头的方式是一致的，一反常态。</p>
+<p>初试有点奇怪，点多几次似乎又挺合理，有点儿苹果鼠标 Natural Scrolling 的意思。</p>
+<p>关键在于，当点击一个箭头的时候，我们的下意识会认为我们控制的对象是什么？</p>
+<p>如果控制的是页面本身的运动方向，那页面运动方向与箭头同向的行为就很顺畅。就像点击传统滚动条两侧的箭头按钮，能控制中间的滚动条的运动方向一样。</p>
+<p>如果控制的是一个长页面的滑动进度，那么页面运动方向和箭头反向也很合理。这里面的操作隐喻应该源自录音机这类卷轴卡带的快进和快退，右箭头快进，切换到下一个/更后面的内容，对于页面上的内容而言，通常我们下意识也会觉得，左为始右为末，所以基于这样的隐喻，我们会觉得点击快进从右往左切换到下一页是合理的。但是很显然，这个隐喻需要后天额外习得的基础。</p>
+<p>也有可能，箭头的方向表达了用户的意图，点击右箭头的表示‘我要看右边的内容’，就像按电梯按键表达的是‘我需要上楼’而不是‘让电梯上来’一样，那么页面运动方向和箭头反向也很合理。但我的确第一次用电梯时是认为我控制的时电梯的上下。</p>
+<p>那这里面，哪一个才是真实的潜意识呢？</p>
+<p>再退一步，如果都有可能，那哪一种潜意识是最符合原始的本能？或者说不需要建立在后天的经验上？</p>
+<p>试想一下，假如是一个小baby，哪一种才是他最容易理解的方式？</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/posts/240701-%E5%BC%80%E8%BD%A6%E5%92%8C%E5%88%B7%E6%8A%96%E9%9F%B3/"
+      ><span class="mr-1.5">←</span><span>开车和刷抖音</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/posts/230325-%E5%8F%A6%E4%B8%80%E4%B8%AA%E8%A7%92%E5%BA%A6%E7%9C%8B%E4%BB%80%E4%B9%88%E6%98%AF%E5%A5%BD%E7%9A%84%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/"
+      ><span>另一个角度看什么是好的产品设计</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco flex h-[4.5rem] items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">DESIGNWANDER · 关于用户界面和工业设计</a>
+  </div>
+  <a class="link mx-6" href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" rel="noopener" target="_blank"
+    >CC BY-NC-ND</a
+  >️
+</footer>
+
+  </body>
+</html>

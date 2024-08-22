@@ -1,0 +1,367 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>电池为什么要以一正一反的方式安装？ - DesignWander</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="很多人的童年都有一个困惑：这个玩具的两颗电池为什么是以一正一反的方式，而不是同方向安装的？随着接触到的产品越来越多，慢慢就习以为常了，不感觉到奇怪，认为这就是它们该有的工作方式，因为它们都是这么安装的！这种习以为常会一直持续多年，直到自己的孩子有一天拿着玩具问了你一个一模一样的问题：为什么两颗电池要一正一反的装？
+这是我的个人感受，应该也是很多人的感受。
+一正一反的安装方式是很典型的「结构实现导向」的设计。道理也很简单，因为要提供足够的电压，产品一般是采用串联两颗电池的方式来驱动，而一正一反的安装方式，是实现串联的最简便的方案：结构简单，走线方便，成本也低。
+当然对于用户体验敏感的人来说，会发现这是一个会让人「嗯？」一下的设计。如果产品要追求流畅无中断的极致体验，可以考虑从用户心智的角度出发，使用两颗电池同向安装的方案，当然了在结构实现上会相对更麻烦一些。
+对于同向安装的方案，如果我们小时候第一次遇到的就是如此，我们并不会产生「真好用」之类的感觉（好用都是相对的），而是根本不会有什么特别感觉，因为它本该如此，这是符合直觉的设计、无意识的设计。假如遇到的是而方向不一致的安装方式，就与我们潜意识相悖，于是就产生了愕然。
+市面上绝大多产品都是一正一反的安装方式，我也习惯了，所以当我第一次给 Magic Mouse 装电池时还是挺感慨的。反向安装不能证明这个产品的设计不行（甚至在成本、社会现状、产品定位等各种因素情况下反向装可能是一个更理性的方案），但正装一定能说明这个产品是有追求的。" />
+  <meta name="author" content="DesignWander" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+  
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  
+  
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y08STD9ZJK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y08STD9ZJK');
+</script>
+  
+
+  
+  <meta name="generator" content="Hugo 0.128.2">
+
+  
+  
+  
+
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="flex h-[4.5rem] px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="sitetitle -translate-x-[1px] -translate-y-[1px] font-semibold"
+      href="http://localhost:1313/"
+      >
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M7.49999 4.04894C7.49999 2.81725 8.83333 2.04745 9.89999 2.66329L30.6 14.6144C31.6667 15.2303 31.6667 16.7699 30.6 17.3857L9.89999 29.3369C8.83333 29.9527 7.49999 29.1829 7.5 27.9512L7.49999 4.04894ZM9.49999 4.74176L9.5 27.2584L29 16.0001L9.49999 4.74176Z" fill="currentColor" fill-opacity="0.5"></path>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.4238 2.00958C8.49491 2.00958 7.63658 2.50514 7.17213 3.30958L0.595893 14.7C0.131447 15.5044 0.131448 16.4955 0.595892 17.3L7.17213 28.6903C7.63658 29.4948 8.49491 29.9903 9.4238 29.9903H22.5763C23.5052 29.9903 24.3635 29.4948 24.8279 28.6903L31.4042 17.3C31.8686 16.4955 31.8686 15.5044 31.4042 14.7L24.8279 3.30958C24.3635 2.50514 23.5052 2.00958 22.5763 2.00958H9.4238ZM8.90418 4.30958C9.01136 4.12394 9.20944 4.00958 9.4238 4.00958H21.768L15.4227 15H2.73206L8.90418 4.30958ZM2.73212 17L8.90418 27.6903C9.01136 27.876 9.20944 27.9903 9.4238 27.9903H21.7679L15.4227 17L2.73212 17ZM23.5 26.9904L29.6721 16.3C29.7793 16.1143 29.7793 15.8856 29.6721 15.7L23.5 5.00958L17.1547 16L23.5 26.9904Z" fill="currentColor"></path>
+      </svg>
+      DesignWander
+    </a>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const applySystemTheme = () => {
+      setDark(darkScheme.matches);
+    };
+
+    
+    darkScheme.addEventListener('change', applySystemTheme);
+
+    
+    applySystemTheme();
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6 opacity-60">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/"
+        >Posts</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="https://www.pinterest.com/leiwaais/"
+        >Inspiration</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="https:www.dribbble.com/leiwaa/"
+        >Sparks</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+    </nav>
+    
+
+  
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-left min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">电池为什么要以一正一反的方式安装？</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Sep 1, 2016</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><p>很多人的童年都有一个困惑：这个玩具的两颗电池为什么是以一正一反的方式，而不是同方向安装的？随着接触到的产品越来越多，慢慢就习以为常了，不感觉到奇怪，认为这就是它们该有的工作方式，因为它们都是这么安装的！这种习以为常会一直持续多年，直到自己的孩子有一天拿着玩具问了你一个一模一样的问题：为什么两颗电池要一正一反的装？</p>
+<p>这是我的个人感受，应该也是很多人的感受。</p>
+<p>一正一反的安装方式是很典型的「结构实现导向」的设计。道理也很简单，因为要提供足够的电压，产品一般是采用串联两颗电池的方式来驱动，而一正一反的安装方式，是实现串联的最简便的方案：结构简单，走线方便，成本也低。</p>
+<p><img src="/images/160901-%E7%94%B5%E6%B1%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BB%A5%E4%B8%80%E6%AD%A3%E4%B8%80%E5%8F%8D%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%89%E8%A3%85%EF%BC%9F/1@2x.png" alt=""></p>
+<p>当然对于用户体验敏感的人来说，会发现这是一个会让人「嗯？」一下的设计。如果产品要追求流畅无中断的极致体验，可以考虑从用户心智的角度出发，使用两颗电池同向安装的方案，当然了在结构实现上会相对更麻烦一些。</p>
+<p>对于同向安装的方案，如果我们小时候第一次遇到的就是如此，我们并不会产生「真好用」之类的感觉（好用都是相对的），而是根本不会有什么特别感觉，因为它本该如此，这是符合直觉的设计、无意识的设计。假如遇到的是而方向不一致的安装方式，就与我们潜意识相悖，于是就产生了愕然。</p>
+<p>市面上绝大多产品都是一正一反的安装方式，我也习惯了，所以当我第一次给 Magic Mouse 装电池时还是挺感慨的。反向安装不能证明这个产品的设计不行（甚至在成本、社会现状、产品定位等各种因素情况下反向装可能是一个更理性的方案），但正装一定能说明这个产品是有追求的。</p>
+<p><img src="/images/160901-%E7%94%B5%E6%B1%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BB%A5%E4%B8%80%E6%AD%A3%E4%B8%80%E5%8F%8D%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%89%E8%A3%85%EF%BC%9F/MagicMouse&amp;MightMouse@2x.jpg" alt=""></p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/posts/161127-designed-by-apple-in-california/"
+      ><span class="mr-1.5">←</span><span>Designed by Apple in California</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/posts/160620-mockup%E5%A4%A7%E5%85%89%E5%9C%88%E9%87%8D%E4%BD%8E%E9%9F%B3/"
+      ><span>MockUp，大光圈，重低音</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco flex h-[4.5rem] items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">DESIGNWANDER · 关于用户界面和工业设计</a>
+  </div>
+  <a class="link mx-6" href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" rel="noopener" target="_blank"
+    >CC BY-NC-ND</a
+  >️
+</footer>
+
+  </body>
+</html>
